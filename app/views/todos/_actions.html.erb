@@ -3,7 +3,15 @@
     <strong><%= @all_todos.active.count %></strong> <%= "item".pluralize @all_todos.active.count %> left
   </span>
 
-  <%= render "/filters/form" %>
+  <ul class="filters">
+    <% %w[all active completed].each do |filter| %>
+      <li>
+        <%= link_to filter.titleize, todos_path(filter: filter),
+          class: ("selected" if params[:filter] == filter),
+          data: { controller: "filter", action: "click->filter#apply" } %>
+      </li>
+    <% end %>
+  </ul>
 
   <% if @all_todos.completed.any? %>
     <button class="clear-completed" data-controller="todos" data-action="click->todos#destroyCompleted">

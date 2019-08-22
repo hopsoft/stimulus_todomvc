@@ -6,7 +6,6 @@
 <% else %>
   <li class="<%= "completed" if todo.completed? %>" data-controller="todo">
     <div class="view">
-      <%#<input type="checkbox" class="toggle">%>
       <%= form_for todo, remote: true, html: { data: { target: "todo.form" }} do |f| %>
         <%= f.hidden_field :id %>
         <%= f.check_box :completed, class: "toggle", data: { action: "change->todo#submit" } %>
