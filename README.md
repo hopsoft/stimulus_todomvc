@@ -9,6 +9,17 @@ An implementation of [TodoMVC](http://todomvc.com) using
 Expands on the original goals of [TodoMVC](http://todomvc.com) by providing a full application...
 including a server and database.
 
+## Table of Contents
+
+<!-- toc -->
+
+- [Demo](#demo)
+- [Why](#why)
+- [Local Setup](#local-setup)
+- [Next Steps](#next-steps)
+
+<!-- tocstop -->
+
 ## Demo
 
 https://stimulus-todomvc.herokuapp.com
