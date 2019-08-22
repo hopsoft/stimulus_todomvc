@@ -46,7 +46,7 @@ _Especially when you consider the deveopment, deployment, operating, and mainten
 1. Clone the repo
 
     ```sh
-    git clone https://github.com/hopsoft/stimulus_odomvc.git
+    git clone https://github.com/hopsoft/stimulus_todomvc.git
     ```
 
 1. Switch into the project folder
