@@ -6,9 +6,7 @@
   <ul class="filters">
     <% %w[all active completed].each do |filter| %>
       <li>
-        <%= link_to filter.titleize, todos_path(filter: filter),
-          class: ("selected" if params[:filter] == filter),
-          data: { controller: "filter", action: "click->filter#apply" } %>
+        <%= link_to filter.titleize, todos_path(filter: filter), class: ("selected" if params[:filter] == filter) %>
       </li>
     <% end %>
   </ul>
