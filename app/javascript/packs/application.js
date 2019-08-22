@@ -9,10 +9,8 @@ Rails.start();
 import Turbolinks from 'turbolinks';
 Turbolinks.start();
 
-import ActiveStorage from '@rails/activestorage';
-ActiveStorage.start();
-
-import 'channels';
+require('@rails/activestorage').start();
+require('channels');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
