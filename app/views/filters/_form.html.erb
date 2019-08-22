@@ -1,0 +1,21 @@
+<%= form_for @filter, remote: true,
+  html: { data: { controller: "filter" }} do |f| %>
+  <%= f.hidden_field :value %>
+  <ul class="filters">
+    <li>
+      <a class="<%= "selected" if @filter.all? %>" data-controller="todos" data-action="click->todos#filter" data-name="all">
+        All
+      </a>
+    </li>
+    <li>
+      <a class="<%= "selected" if @filter.active? %>" data-controller="todos" data-action="click->todos#filter" data-name="active">
+        Active
+      </a>
+    </li>
+    <li>
+      <a class="<%= "selected" if @filter.completed? %>" data-controller="todos" data-action="click->todos#filter" data-name="completed">
+        Completed
+      </a>
+    </li>
+  </ul>
+<% end %>

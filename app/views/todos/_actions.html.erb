@@ -1,0 +1,13 @@
+<section class="footer">
+  <span class="todo-count">
+    <strong><%= @all_todos.active.count %></strong> <%= "item".pluralize @all_todos.active.count %> left
+  </span>
+
+  <%= render "/filters/form" %>
+
+  <% if @all_todos.completed.any? %>
+    <button class="clear-completed" data-controller="todos" data-action="click->todos#destroyCompleted">
+      Clear completed
+    </button>
+  <% end %>
+</section>

@@ -1,0 +1,22 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <%= render "todos/form" %>
+  </header>
+
+  <% if @all_todos.any? %>
+    <section class="main">
+      <input class="toggle-all" type="checkbox">
+      <label data-controller="todos" data-action="click->todos#toggleAll">
+        Mark all as complete
+      </label>
+      <ul class="todo-list">
+        <%= render partial: "todo", collection: @filtered_todos %>
+      </ul>
+    </section>
+  <% end %>
+
+  <%= render "/todos/actions" if @all_todos.any? %>
+</section>
+
+<%= render "/todos/badges" %>

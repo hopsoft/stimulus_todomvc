@@ -1,0 +1,3 @@
+<%= form_for Todo.new, remote: true do |f| %>
+  <%= f.text_field :title, class: "new-todo", placeholder: "What needs to be done?", autofocus: true %>
+<% end %>
