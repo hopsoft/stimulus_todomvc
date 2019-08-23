@@ -11,9 +11,11 @@ module StimulusTodomvc
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # when generating a scaffold: views, tests, assets,
+    # helpers, and stylesheets will not be created
     config.generators do |g|
-      g.template_engine nil # to skip views
-      g.test_framework  nil # to skip test framework
+      g.template_engine nil
+      g.test_framework  nil
       g.assets false
       g.helper false
       g.stylesheets false
