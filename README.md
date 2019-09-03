@@ -76,3 +76,10 @@ _Especially when you consider the deveopment, deployment, operating, and mainten
 
 If you find this approach lacking, consider giving [StimulusReflex](https://github.com/hopsoft/stimulus_reflex)
 a try before reaching for a complex JavaScript framework.
+
+## Contributing
+
+This project uses [Standard](https://github.com/testdouble/standard)
+and [Prettier](https://github.com/prettier/prettier) to minimize bike shedding related to code formatting.
+
+Please run `./bin/standardize` prior submitting pull requests.
