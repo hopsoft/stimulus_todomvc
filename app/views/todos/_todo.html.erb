@@ -8,7 +8,7 @@
     <div class="view">
       <%= form_for todo, remote: true, html: { data: { target: "todo.form" }} do |f| %>
         <%= f.hidden_field :id %>
-        <%= f.check_box :completed, class: "toggle", data: { action: "change->todo#submit" } %>
+        <%= f.check_box :completed, class: "toggle", data: { action: "change->todo#submit", target: "todos.checkbox" } %>
       <% end %>
       <label data-action="click->todos#edit">
         <%= todo.title %>

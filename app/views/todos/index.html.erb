@@ -5,9 +5,9 @@
   </header>
 
   <% if @all_todos.any? %>
-    <section class="main">
-      <input class="toggle-all" type="checkbox">
-      <label data-controller="todos" data-action="click->todos#toggleAll">
+    <section class="main" data-controller="todos">
+      <input class="toggle-all" id="toggle-all" type="checkbox" data-action="todos#toggleAll">
+      <label for="toggle-all">
         Mark all as complete
       </label>
       <ul class="todo-list">

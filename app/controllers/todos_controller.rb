@@ -25,7 +25,7 @@ class TodosController < ApplicationController
   private
 
   def todos_params
-    params.require(:todo).permit(:title, :completed).merge(session_id: session.id)
+    params.require(:todo).permit(:title, :completed, :id).merge(session_id: session.id)
   end
 
   def set_todo
