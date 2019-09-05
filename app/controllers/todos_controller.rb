@@ -22,10 +22,15 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+  def batch
+    Todo.where(id: params[:todo_ids].first.split(',')).each { |todo| todo.toggle! :completed }
+    redirect_to todos_path
+  end
+
   private
 
   def todos_params
-    params.require(:todo).permit(:title, :completed, :id).merge(session_id: session.id)
+    params.require(:todo).permit(:title, :completed).merge(session_id: session.id)
   end
 
   def set_todo

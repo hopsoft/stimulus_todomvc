@@ -6,13 +6,16 @@
 
   <% if @all_todos.any? %>
     <section class="main" data-controller="todos">
-      <input class="toggle-all" id="toggle-all" type="checkbox" data-action="todos#toggleAll">
-      <label for="toggle-all">
-        Mark all as complete
-      </label>
-      <ul class="todo-list">
-        <%= render partial: "todo", collection: @filtered_todos %>
-      </ul>
+      <%= form_with url: batch_todos_path, html: { data: { target: "todos.updateAllForm" }} do |ft| %>
+        <%= ft.hidden_field "todo_ids[]", data: { target: "todos.selectAll"} %>
+        <input class="toggle-all" id="toggle-all" type="checkbox" data-target="todos.checkbox" data-action="todos#toggleAll">
+        <label for="toggle-all">
+          Mark all as complete
+        </label>
+      <% end %>
+        <ul class="todo-list">
+          <%= render partial: "todo", collection: @filtered_todos %>
+        </ul>
     </section>
   <% end %>
 
