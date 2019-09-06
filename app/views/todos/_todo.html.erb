@@ -4,15 +4,17 @@
       data-controller="todos" data-action="change->todos#update keypress->todos#cancelEdit blur->todos#cancelEdit" data-id="<%= todo.id %>">
   </li>
 <% else %>
-  <li class="<%= "completed" if todo.completed? %>" data-controller="todo">
+  <li class="<%= "completed" if todo.completed? %>">
     <div class="view">
-      <%= form_for todo, remote: true, html: { data: { target: "todo.form" }} do |f| %>
-        <%= f.hidden_field :id, data: { target: "todos.hiddenField"} %>
-        <%= f.check_box :completed, class: "toggle", data: { action: "change->todo#submit", target: "todos.checkbox" } %>
-      <% end %>
-      <label data-action="click->todos#edit">
+      <%#= form_for todo, remote: true, html: { data: { target: "todo.form" }} do |f| %>
+        <%#= f.hidden_field :id, data: { target: "todos.hiddenField"} %>
+        <%#= f.check_box :completed, class: "toggle", data: { action: "change->todo#submit", target: "todos.checkbox" } %>
+      <%# end %>
+
+      <%= checkbox_option.label("data-action": "click->todos#edit") do %>
+        <%= checkbox_option.check_box(class: "toggle", data: { action: "change->todos#submit", target: "todos.checkbox" }) %>
         <%= todo.title %>
-      </label>
+      <% end %>
       <%= button_to "&times;".html_safe, todo_path(todo), type: "button", class: "destroy", remote: true, method: :delete %>
     </div>
   </li>
