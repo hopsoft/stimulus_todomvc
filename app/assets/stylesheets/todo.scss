@@ -1,0 +1,15 @@
+.toggle-all-button {
+  opacity: 1;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em !important;
+  transform: rotate(90deg) !important;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  opacity: .5;
+
+  &:active, &:hover {
+    opacity: 1;
+  }
+}

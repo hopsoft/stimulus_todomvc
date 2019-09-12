@@ -34,11 +34,7 @@ class TodosController < ApplicationController
   end
 
   def toggle_todos
-    if @all_todos.any?(&:active?)
-      @all_todos.update_all(completed: true)
-    else
-      @all_todos.update_all(completed: false)
-    end
+    @all_todos.update_all completed: @all_todos.any?(&:active?)
   end
 
   def todos_params
