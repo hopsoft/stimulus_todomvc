@@ -7,7 +7,7 @@
   <% if @all_todos.any? %>
     <section class="main">
       <%= form_with url: bulk_update_todos_path, html: { data: { controller: "todos", target: "todos.form" } } do |buf| %>
-        <%= buf.submit "❯", class: "toggle-all-button", data: { action: "click->todos#toggleAll"} %>
+        <%= buf.submit "❯", class: "toggle-all-button #{'all-completed' if @all_todos.all?(&:completed)}", data: { action: "click->todos#toggleAll"} %>
       <% end %>
 
       <ul class="todo-list">
