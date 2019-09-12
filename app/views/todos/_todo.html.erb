@@ -10,7 +10,7 @@
         <%= f.hidden_field :id %>
         <%= f.check_box :completed, class: "toggle", data: { action: "change->todo#submit" } %>
       <% end %>
-      <label data-action="click->todos#edit">
+      <label data-action="click->todo#edit">
         <%= todo.title %>
       </label>
       <%= button_to "&times;".html_safe, todo_path(todo), type: "button", class: "destroy", remote: true, method: :delete %>
