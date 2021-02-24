@@ -8,7 +8,7 @@
 #  completed  :boolean          default(FALSE), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#
+#  user       :int              
 
 class Todo < ApplicationRecord
   validates :session_id, presence: true

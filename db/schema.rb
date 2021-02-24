@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_21_224841) do
+ActiveRecord::Schema.define(version: 2021_02_24_201759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_224841) do
     t.boolean "completed", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user"
     t.index ["completed"], name: "index_todos_on_completed"
     t.index ["session_id"], name: "index_todos_on_session_id"
   end

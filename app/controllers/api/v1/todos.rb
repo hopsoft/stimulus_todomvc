@@ -27,16 +27,31 @@ module API
                     post do 
                         Todo.create!({
                             title: params[:title],
-                            session_id: params[:session_id]
+                            session_id: params[:session_id],
+                            user: params[:user]
                         })
                     end
                 
+                #Update user with param
+                desc "Update User"
+                    params do
+                        requires :id
+                    end
+                    put ':id' do
+                        current_todo = Todo.find_by_id(params[:id])
+                        #If not found the api will respond with:
+                        return "Todo Not Found" unless current_todo
+                        return "No Change Made" unless params[:user]
+                        current_todo.user = params[:user]
+                        current_todo.save!
+                    end
+
                 #Update route to flip completion
                 desc "Flip Todo Creation"
                     params do
                         requires :id
                     end
-                    put ':id' do
+                    put ':id/flip' do
                         current_todo = Todo.find_by_id(params[:id])
                         #If not found the api will respond with:
                         return "Todo Not Found" unless current_todo
