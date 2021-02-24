@@ -6,7 +6,6 @@ module API
             resource :todos do
                 desc "All Available Todos"
                 get "" do 
-                    puts "here"
                     Todo.all
                 end
 
@@ -17,7 +16,7 @@ module API
                     get ":id" do
                         Todo.where(id: permitted_params[:id]).first!
                     end
-            end
+                end
         end
     end    
 end
