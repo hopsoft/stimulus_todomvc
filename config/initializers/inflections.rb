@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+#I got an interesting error, the good ol' stackoverflow pointed me in this direction, makes sense though 
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+    inflect.acronym 'API'
+end

@@ -20,5 +20,15 @@ module StimulusTodomvc
       g.helper false
       g.stylesheets false
     end
+
+    #allow for CORS for right now
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :put, :delete, :options]
+      end
+    end
+
+
   end
 end
